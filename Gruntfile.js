@@ -5,8 +5,6 @@
  * Licensed under the MIT license.
  */
 
- var all_src_files = ['src/**/*.js', 'src/**/*.coffee', 'src/**/*.less'];
-
  module.exports = function(grunt) {
 
   // Project configuration.
@@ -54,16 +52,8 @@
     },
     watch: {
       default: {
-        files: all_src_files,
+        files: ['src/**/*.js', 'src/**/*.coffee', 'src/**/*.less'],
         tasks: ['default']
-      },
-      complete: {
-        files: all_src_files,
-        tasks: ['complete']
-      },
-      spec: {
-        files: all_src_files,
-        tasks: ['spec']
       }
     },
     clean: {
