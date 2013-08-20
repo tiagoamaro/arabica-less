@@ -1,7 +1,5 @@
-arabica-less
-============
-
-# Arabica-Less : Using CoffeScript and Less with GruntJS
+# Arabica-Less
+## Using CoffeScript and Less with GruntJS
 
 - [Less](https://github.com/less/less.js)
 - [GruntJS](http://gruntjs.com/)
