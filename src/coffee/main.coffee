@@ -1,0 +1,1 @@
+# Create other CoffeeScript files or JS files as you wish :)
