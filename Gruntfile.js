@@ -12,6 +12,18 @@
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    less: {
+      development: {
+        options: {
+          paths: 'src/css',
+          compress: true,
+          ieCompat: true
+        },
+        files: {
+          'build/css/less_result.css': 'src/**/*.less'
+        }
+      }
+    },
     coffee: {
       compile: {
         files: {
@@ -25,15 +37,6 @@
         src: ['*.coffee'],
         dest: 'spec/coffee_ready',
         ext: '.js'
-      }
-    },
-    jasmine: {
-      arabica: {
-        src: 'src/**/*.js',
-        options: {
-          specs: 'spec/**/*Spec.js',
-          helpers: 'spec/**/*Helper.js'
-        }
       }
     },
     uglify: {
@@ -73,11 +76,9 @@
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
 
   // Default task.
-  grunt.registerTask('default', ['coffee', 'uglify']);
-  grunt.registerTask('complete', ['default', 'jasmine']);
-  grunt.registerTask('spec', ['jasmine']);
+  grunt.registerTask('default', ['coffee', 'uglify', 'less']);
 };
