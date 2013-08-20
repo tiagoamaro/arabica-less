@@ -13,12 +13,12 @@
     less: {
       development: {
         options: {
-          paths: 'src/css',
+          paths: ['src/less'],
           compress: true,
           ieCompat: true
         },
         files: {
-          'build/css/less_result.css': 'src/**/*.less'
+          'build/css/less_result.css': 'src/less/main.less'
         }
       }
     },
@@ -52,7 +52,7 @@
     },
     watch: {
       default: {
-        files: ['src/**/*.js', 'src/**/*.coffee', 'src/**/*.less'],
+        files: ['src/coffee/**/*.js', 'src/coffee/**/*.coffee', 'src/less/**/*.less'],
         tasks: ['default']
       }
     },
